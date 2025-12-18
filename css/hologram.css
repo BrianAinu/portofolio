@@ -1,0 +1,34 @@
+/* Wrapper untuk hologram */
+.hologram-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#hologramCanvas {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+
+/* Wrapper untuk konten utama */
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+/* Pastikan navbar tetap di atas hologram */
+.navbar {
+    z-index: 10;
+}
+
+/* Optimisasi untuk mobile */
+@media (max-width: 768px) {
+    #hologramCanvas {
+        opacity: 0.3;
+    }
+} 

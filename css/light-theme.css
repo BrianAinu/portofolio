@@ -1,0 +1,146 @@
+body {
+    background:#f5f7fa;
+    color:#2f2c2c;
+}
+
+/* Base text color override */
+p, h1, h2, h3, h4, h5, h6, .bio-text, .info-item .value, .section-header h2, .about-header h2 {
+    color:#2f2c2c !important;
+}
+
+
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.nav-link {
+    color: #2f2c2c;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    color: #007bff;
+}
+
+.profile-card,
+.contact-card,
+.project-card,
+.certificate-card,
+.skill-item {
+    background: #f9f9f9;
+    border: 1px solid #000;
+    color:#222 !important;
+}
+
+
+.info-item {
+    color: #333;
+}
+
+
+#hologramCanvas {
+    opacity:1;
+}
+
+/* Navbar & Logo overrides for light theme */
+.navbar {
+    background: rgba(255,255,255,0.9) !important;
+    border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.nav-logo svg {
+    width: 40px;
+    height: 40px;
+}
+
+.logo-circle {
+    stroke: #00b3ff !important;
+    transition: all 0.3s ease;
+}
+
+.logo-text {
+    fill: #00b3ff !important;
+    transition: all 0.3s ease;
+}
+
+.nav-logo:hover .logo-circle {
+    stroke: #0088cc !important;
+}
+
+.nav-logo:hover .logo-text {
+    fill: #0088cc !important;
+}
+
+/* Light theme translucent section backgrounds */
+.hero,
+.about-section,
+.skills-section,
+.projects-section,
+.experience-section,
+.contact-section,
+.certificates-section {
+    background: rgba(255,255,255,0.3) !important;
+    backdrop-filter: blur(4px);
+}
+
+
+/* Form and card clarity */
+.contact-card,
+.profile-card,
+.project-card,
+.certificate-card,
+.skill-item {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.contact-form-container {
+    background:#f9f9f9;
+    border:1px solid #000;
+    border-radius:8px;
+    padding:2rem;
+}
+
+.contact-section input,
+.contact-section textarea,
+.contact-section select {
+    background:#ffffff !important;
+    border:1px solid #cccccc !important;
+    color:#222 !important;
+}
+
+/* Global text color override to ensure readability */
+body, body * {
+    color: #222 !important;
+}
+
+/* Preserve accent colors for primary links/icons */
+a, .link-primary, .text-primary, .nav-link.active, .nav-link:hover {
+    color: #007bff !important;
+}
+
+/* Preserve icon colors inside overlays */
+.project-overlay i,
+.certificate-overlay i,
+.view-certificate i {
+    color: #00b3ff !important;
+}
+
+/* Ensure nav-link icons/text visible in light theme */
+.nav-link i,
+.nav-link span {
+    color: #2f2c2c !important;
+}
+
+/* Maintain active nav-link accent */
+.nav-link.active i,
+.nav-link.active span {
+    color: #007bff !important;
+}
+
+/* Preserve typing/scrolling text accent color */
+.typed-text {
+    color: #00f7ff !important;
+}
+.cursor {
+    background-color: #00f7ff !important;
+} 
