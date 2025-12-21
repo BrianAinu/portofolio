@@ -11,8 +11,16 @@
 </head>
 <body>
     <div class="theme-toggle">
-        <i id="themeIcon" class="fas fa-sun" style="font-size: 20px; cursor: pointer;"></i>
-        <span id="themeLabel" style="font-size: 16px; margin-left: 5px; cursor: pointer;">Tema</span>
+        <div class="toggle-container">
+            <input type="checkbox" id="themeToggle" class="toggle-input">
+            <label for="themeToggle" class="toggle-label">
+                <span class="toggle-slider">
+                    <i class="fas fa-sun toggle-icon sun-icon"></i>
+                    <i class="fas fa-moon toggle-icon moon-icon"></i>
+                </span>
+            </label>
+            <span class="toggle-text">Tema</span>
+        </div>
     </div>
 
     <!-- Floating Email Button -->
