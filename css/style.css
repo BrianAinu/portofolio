@@ -1888,3 +1888,241 @@ body {
         }
     }
 }
+
+/* Floating Email Button */
+.floating-email-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #8A2BE2, #00f7ff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(138, 43, 226, 0.4);
+    transition: all 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+.floating-email-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(138, 43, 226, 0.6);
+    background: linear-gradient(135deg, #00f7ff, #8A2BE2);
+}
+
+.floating-email-btn:active {
+    transform: scale(0.95);
+}
+
+.floating-email-btn i {
+    font-size: 24px;
+    color: #fff;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.floating-email-btn:hover i {
+    transform: rotate(10deg);
+}
+
+/* Floating Banner */
+.floating-banner {
+    position: absolute;
+    left: 50%;
+    bottom: 70px;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #ff4444, #ff6b35);
+    color: #fff;
+    padding: 8px 15px 8px 12px;
+    font-size: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: 0 4px 15px rgba(255, 68, 68, 0.4);
+    animation: bannerPulse 2s ease-in-out infinite;
+    text-align: center;
+    line-height: 1.2;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.floating-banner::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #ff4444;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+}
+
+.floating-banner::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 12px solid #ff6b35;
+    margin-top: -1px;
+}
+
+.floating-banner span {
+    display: block;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.floating-banner span:first-child {
+    font-size: 9px;
+    margin-bottom: -2px;
+}
+
+.floating-banner span:last-child {
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.floating-email-btn:hover .floating-banner {
+    transform: translateX(-50%) scale(1.05);
+    animation: bannerBounce 0.6s ease-out;
+}
+
+@keyframes bannerPulse {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(255, 68, 68, 0.4);
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(255, 68, 68, 0.7);
+        transform: translateX(-50%) scale(1.02);
+    }
+}
+
+@keyframes bannerBounce {
+    0% {
+        transform: translateX(-50%) scale(1.05) rotate(-2deg);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.1) rotate(1deg);
+    }
+    100% {
+        transform: translateX(-50%) scale(1.05) rotate(0deg);
+    }
+}
+
+/* Float animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 768px) {
+    .floating-email-btn {
+        bottom: 100px; /* Naikkan posisi agar tidak tertutup navbar */
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .floating-email-btn i {
+        font-size: 20px;
+    }
+    
+    .floating-banner {
+        bottom: 60px;
+        padding: 6px 12px;
+        font-size: 8px;
+    }
+    
+    .floating-banner::before {
+        border-left-width: 8px;
+        border-right-width: 8px;
+        border-top-width: 12px;
+    }
+    
+    .floating-banner::after {
+        border-left-width: 6px;
+        border-right-width: 6px;
+        border-top-width: 10px;
+    }
+    
+    .floating-banner span:first-child {
+        font-size: 7px;
+    }
+    
+    .floating-banner span:last-child {
+        font-size: 9px;
+    }
+}
+
+/* Dark theme compatibility */
+.dark-theme .floating-email-btn {
+    background: linear-gradient(135deg, #8A2BE2, #00f7ff);
+    box-shadow: 0 4px 20px rgba(138, 43, 226, 0.4);
+}
+
+.light-theme .floating-email-btn {
+    background: linear-gradient(135deg, #6a1b9a, #0288d1);
+    box-shadow: 0 4px 20px rgba(106, 27, 154, 0.4);
+}
+/* Footer Section */
+.footer-section {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 30px 0;
+    margin-top: 50px;
+    border-top: 1px solid rgba(138, 43, 226, 0.2);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.footer-container p {
+    color: #888;
+    font-size: 14px;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive footer */
+@media (max-width: 768px) {
+    .footer-section {
+        padding: 20px 0;
+        margin-top: 30px;
+    }
+    
+    .footer-container p {
+        font-size: 12px;
+    }
+}
+
+/* Light theme compatibility */
+.light-theme .footer-section {
+    background: rgba(255, 255, 255, 0.9);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .footer-container p {
+    color: #666;
+}

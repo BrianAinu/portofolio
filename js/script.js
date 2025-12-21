@@ -88,9 +88,32 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            // Tambahkan logika pengiriman form disini
-            alert('Pesan telah terkirim!');
-            contactForm.reset();
+            
+            // Ambil data dari form
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Buat body email dengan format yang rapi
+            const emailBody = `Nama: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0APesan:%0D%0A${message}`;
+            
+            // Buat mailto link
+            const mailtoLink = `mailto:brianainurofiq@gmail.com?subject=${encodeURIComponent(subject)}&body=${emailBody}`;
+            
+            // Buka email client
+            try {
+                window.location.href = mailtoLink;
+                
+                // Reset form setelah membuka email
+                setTimeout(() => {
+                    contactForm.reset();
+                }, 1000);
+            } catch (error) {
+                // Fallback jika mailto tidak didukung
+                alert('Silakan kirim email ke: brianainurofiq@gmail.com');
+                console.error('Mailto error:', error);
+            }
         });
     }
 
@@ -179,6 +202,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 top: 0,
                 behavior: 'smooth'
             });
+        });
+    }
+
+    // Floating Email Button
+    const floatingEmailBtn = document.getElementById('floatingEmailBtn');
+    if (floatingEmailBtn) {
+        floatingEmailBtn.addEventListener('click', function() {
+            // Buat mailto link langsung
+            const subject = 'Pesan dari Website Portfolio';
+            const body = 'Halo Brian,%0D%0A%0D%0ASaya tertarik untuk berdiskusi dengan Anda.%0D%0A%0D%0ATerima kasih.';
+            const mailtoLink = `mailto:brianainurofiq@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+            
+            // Tambahkan efek klik
+            this.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+            
+            // Buka email client
+            try {
+                window.location.href = mailtoLink;
+            } catch (error) {
+                alert('Silakan kirim email ke: brianainurofiq@gmail.com');
+                console.error('Mailto error:', error);
+            }
         });
     }
 }); 
