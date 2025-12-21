@@ -205,14 +205,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Floating Email Button
-    const floatingEmailBtn = document.getElementById('floatingEmailBtn');
-    if (floatingEmailBtn) {
-        floatingEmailBtn.addEventListener('click', function() {
-            // Buat mailto link langsung
-            const subject = 'Pesan dari Website Portfolio';
-            const body = 'Halo Brian,%0D%0A%0D%0ASaya tertarik untuk berdiskusi dengan Anda.%0D%0A%0D%0ATerima kasih.';
-            const mailtoLink = `mailto:brianainurofiq@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    // Floating WhatsApp Button
+    const floatingWhatsAppBtn = document.getElementById('floatingWhatsAppBtn');
+    if (floatingWhatsAppBtn) {
+        floatingWhatsAppBtn.addEventListener('click', function() {
+            // Nomor WhatsApp dan pesan default
+            const phoneNumber = '6281359761810'; // Format internasional Indonesia
+            const message = 'Halo Brian! Saya tertarik dengan layanan Anda.';
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             
             // Tambahkan efek klik
             this.style.transform = 'scale(0.9)';
@@ -220,13 +220,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.style.transform = '';
             }, 150);
             
-            // Buka email client
-            try {
-                window.location.href = mailtoLink;
-            } catch (error) {
-                alert('Silakan kirim email ke: brianainurofiq@gmail.com');
-                console.error('Mailto error:', error);
-            }
+            // Buka WhatsApp
+            window.open(whatsappURL, '_blank');
         });
     }
 }); 
